@@ -1,0 +1,69 @@
+// Import variables
+@use '../../styles/abstracts/colors' as *;
+@use '../../styles/abstracts/fonts' as *;
+@use '../../styles/abstracts/mixins' as *;
+@use '../../styles/abstracts/variables' as *;
+
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 7.5%;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+
+    width: 85%;
+
+    margin: 0 auto;
+    padding: $two-rem 0;
+    background-color: $clr-primary;
+
+    // Style to fit content to tablet screen size
+    @include tablet {
+      display: block;
+    }
+  }
+
+  .separator {
+    // Relative positioning to home box
+    position: fixed;
+    top: $eightish-rem;
+
+    // Line between header and list
+    // Gradient on the line edges
+    width: 100%;
+    height: $point-one-rem;
+    --direction: to right;
+    background: linear-gradient(
+      var(--direction),
+      transparent,
+      $clr-light-white 50%,
+      transparent
+    );
+
+    // Style to fit content to tablet screen size
+    @include tablet {
+      position: fixed;
+      top: 14.7rem;
+      z-index: 5;
+
+      height: $point-one-rem;
+    }
+  }
+
+  main {
+    margin-top: $eleven-rem;
+
+    // Style to fit content to tablet screen size
+    @include tablet {
+      margin-top: $seventeen-rem;
+    }
+  }
+}

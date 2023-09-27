@@ -1,0 +1,22 @@
+// Import variables
+@use '../../../styles/abstracts/colors' as *;
+@use '../../../styles/abstracts/fonts' as *;
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/variables' as *;
+
+.error {
+  // Error message below the bookmark input field
+  position: absolute;
+  top: $five-rem;
+  left: $one-quarter-rem;
+  z-index: 2;
+
+  span {
+    font-weight: $f-w-600;
+    color: $clr-dark-red;
+
+    @include phones {
+      font-size: $f-s-380;
+    }
+  }
+}
